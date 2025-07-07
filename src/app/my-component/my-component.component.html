@@ -1,0 +1,20 @@
+<div class="my-component">
+  <h2>{{ title }}</h2>
+  
+  <div class="status">
+    <p>Position: {{ position }}</p>
+    <p>Has Backdrop: {{ hasBackdrop }}</p>
+  </div>
+  
+  <div class="actions">
+    <button (click)="onOpenStateChange(true)">Open (Triggers Bug)</button>
+    <button (click)="onOpenStateChange(false)">Close</button>
+    <button (click)="onBackdropClick()">Backdrop Click</button>
+  </div>
+  
+  <div class="note">
+    <p><strong>Note:</strong> Click "Open (Triggers Bug)" to reproduce the error in static Storybook builds.</p>
+    <p>The error occurs when trying to emit the <code>positionSet</code> event: "this.positionSet.emit is not a function"</p>
+    <p><strong>Additional Issue:</strong> Derived observables like <code>_opened$</code> and <code>_closed$</code> that depend on broken EventEmitters are also broken from class initialization time.</p>
+  </div>
+</div>
