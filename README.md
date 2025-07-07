@@ -1,0 +1,1 @@
+# storybook-complex-inheritance-issue
